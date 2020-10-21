@@ -20,7 +20,8 @@ Route::get('/', function () {
     return view('layouts.admin');
 })->name('home')->middleware('auth');
 
-Route::resource('cat', 'CatController');
+Route::resource('cat', CatController::class);
+//Route::resource('cat', 'CatController');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

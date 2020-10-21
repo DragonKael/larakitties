@@ -38,9 +38,15 @@
                     <td>
                         <img src="{{ $cat->photo }}" class="img-responsive" alt="Imagen">
                     </td>
-                    <td>{{ $cat->breed->name }} - {{ $cat->breed->id }}</td>
+                    <td>{{ $cat->breed->breed }} - {{ $cat->breed->id }}</td>
                     <td>
-                        <a href="#">
+                        <a href="#" data-target="#modal-show-{{ $cat->id }}" data-toggle="modal">
+                            <button type="button" class="btn btn-success" name="Ver">
+                                Ver
+                            </button>
+                        </a>
+
+                        <a href="#" data-target="#modal-edit-{{ $cat->id }}" data-toggle="modal">
                             <button type="button" class="btn btn-info" name="Editar">
                                 Editar
                             </button>
@@ -54,8 +60,11 @@
                     </td>
                 </tr>
                 @include('cats.delete')
+                @include('cats.show')
+                @include('cats.edit')
             @endforeach
           </table>
+          @include('cats.create')
         </div>
         {{ $cats->render() }}
       </div>

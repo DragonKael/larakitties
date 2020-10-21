@@ -10,7 +10,7 @@ class Breed extends Model
     use HasFactory;
     //campos obligatorios
     protected $fillable=[
-        'bread'
+        'breed'
     ];
     //relacion, una raza tiene mucho gatos
     public function cats(){

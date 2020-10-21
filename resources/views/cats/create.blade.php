@@ -17,10 +17,9 @@
               </div>
 
               <div class="form-group">
-                <label for="date_of_birt">Fecha de Nacimiento</label>
-                <input type="date" name="date_of_birt" class="form-control" id="" placeholder="">
+                <label for="date_of_birth">Fecha de Nacimiento</label>
+                <input type="date" name="date_of_birth" class="form-control" id="" placeholder="">
               </div>
-            </div>
 
             <div class="form-group">
               <label for="gender">Genero</label>
@@ -39,10 +38,12 @@
               <label for="breed">Raza</label>
               <select class="form-control" name="breed_id">
                   @foreach ($breeds as $breed )
-                      <option value="{{ $breed->id }}">{{ $breed->name }}</option>
+                      <option value="{{ $breed->id }}">{{ $breed->breed }}</option>
                   @endforeach
               </select>
             </div>
+        </div>
+
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">

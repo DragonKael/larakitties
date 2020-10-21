@@ -13,7 +13,8 @@
              </div>
              <div class="modal-body">
                <p>Confirme si desea Eliminar el gatito:
-                   <strong>{{ $cat->name }}</strong>
+                   <strong>{{ $cat->name }}</strong>,
+                   con el identificador: <strong>{{ $cat->id }}</strong>
                </p>
              </div>
              <div class="modal-footer">
@@ -26,5 +27,5 @@
              </div>
            </div>
          </div>
-     </form>  
+     </form>
 </div>

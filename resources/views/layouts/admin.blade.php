@@ -113,7 +113,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Cats</a></li>
+                <li><a href="/cat"><i class="fa fa-circle-o"></i> Cats</a></li>
               </ul>
             </li>
 
@@ -173,7 +173,7 @@
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->
-                              <h3>Contenido</h3>
+                              @yield('contenido')
 		                          <!--Fin Contenido-->
                            </div>
                         </div>

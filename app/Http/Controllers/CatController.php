@@ -47,7 +47,7 @@ class CatController extends Controller
     {
         //almacenamos todo en la bd
         $cat=Cat::create($request->all());
-        $cat=save();
+        $cat->save();
         return redirect()->route('cat.index');
     }
 
@@ -57,11 +57,13 @@ class CatController extends Controller
      * @param  \App\Models\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show(Cat $cat)
-    {
-        //
-    }
-
+     public function show($id)
+         {
+             //
+             $cat=Cat::find($id);
+             $breed=Breed::all();
+             return view('cats.show', compact('cat','breed'));
+         }
     /**
      * Show the form for editing the specified resource.
      *
@@ -80,10 +82,19 @@ class CatController extends Controller
      * @param  \App\Models\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cat $cat)
-    {
-        //
-    }
+     public function update(Request $request, Cat $cat)
+     {
+         //
+         Cat::find($cat->id);
+         $breed=Breed::all();
+         $cat->name=$request->name;
+         $cat->date_of_birth=$request->date_of_birth;
+         $cat->gender=$request->gender;
+         $cat->photo=$request->photo;
+         $cat->breed_id=$request->breed_id;
+         $cat->save();
+         return back();
+     }
 
     /**
      * Remove the specified resource from storage.
